@@ -1,0 +1,15 @@
+install.packages("DataExplorer")
+library(DataExplorer)
+choco = read.csv('flavors_of_cacao.csv', header = T, stringsAsFactors = F)
+choco
+summary(choco)
+choco$Cocoa.Percent = as.numeric(gsub('%','',choco$Cocoa.Percent))
+summary(choco)
+choco$Review.Date = as.character(choco$Review.Date)
+summary(choco)
+plot_str(choco) 
+plot_missing(choco)
+plot_histogram(choco) 
+plot_density(choco)
+plot_bar(choco) 
+ 
